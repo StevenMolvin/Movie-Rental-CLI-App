@@ -6,22 +6,22 @@
 TECHNOLOGY:
     Python > SQLAlchemy
 
-SETUP AND INSTALLATION
+# SETUP AND INSTALLATION
 
-    -Clone the repository from Github:
+   -Clone the repository from Github:
         1. Run ($ git clone git@github.com:StevenMolvin/Movie-Rental-Database.git) in your desired
            directory on your terminal.
         2. Navigate into the directory created.
-    -To run the code, you will need to have python installed(Skip this step if you have Python):
+   -To run the code, you will need to have python installed(Skip this step if you have Python):
         https://www.python.org/downloads/ then acquire the version that is compatible with your OS.
         or via the terminal: 
-        a) MacOS
-          1. $ brew update && brew upgrade
-          2. $ brew install python3.11
+   a) MacOS
+      1. $ brew update && brew upgrade
+      2. $ brew install python3.11
         
-        b)Linux/ Ubuntu
-        1. $ sudo apt-get update && sudo apt-get upgrade
-        2. $ sudo apt-get install python3.11
+   b)Linux/ Ubuntu
+      1. $ sudo apt-get update && sudo apt-get upgrade
+      2. $ sudo apt-get install python3.11
     
 
 # CONTRIBUTION GUIDELINES
