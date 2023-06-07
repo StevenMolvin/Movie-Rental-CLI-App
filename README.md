@@ -3,7 +3,7 @@
     on availabilty. This is achieved by implementing python fundamentals and SQLAlchemy to create 
     and interact with the database.
 
-TECHNOLOGY:
+# TECHNOLOGY:
     Python > SQLAlchemy
 
 # SETUP AND INSTALLATION
@@ -32,7 +32,7 @@ TECHNOLOGY:
     -Install dependencies:
         Open your terminal, navigate to your remote repository directory and run:
             $ pipenv install
-            
+
 # CONTRIBUTION GUIDELINES
     -Fork the project
     -Create a new branch ($ git checkout -b <branch_name>)
