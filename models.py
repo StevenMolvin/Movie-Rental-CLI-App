@@ -68,9 +68,28 @@ def rent_movie(session):
         session.add(customer)
         session.commit()
         
-    rental = Rental(movie= movie, customer= customer)
+    rental = Rental(rental_ID= Rental.id, movie= movie, customer= customer)
     session.add(rental)
     session.commit()
     
+    rental_id = rental.id
     print("Movie rented successfully!")
+    print("Rental ID", rental_id)
+    
+# Return Movie
+def return_movie(session):
+    rental_id = input("Enter the Rental ID: ")
+    rental = session.query(Rental).get(rental_id)
+    
+    if rental is None:
+        print("Invalid rental ID!")
+        return
+    
+    rental.return_date = datetime.now()
+    session.commit()
+    
+    print("Movie returned successfully!")
+    
+# List All Movies
+    
 
