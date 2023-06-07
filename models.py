@@ -20,3 +20,10 @@ class Movie(Base):
     length = Column(String)
     release_date = Column(DateTime)
     
+# Define the Customer class
+class Customer(Base):
+    __tablename__ = 'customers'
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    
+    
