@@ -4,7 +4,7 @@
     and interact with the database.
 
 # TECHNOLOGY:
-    Python > SQLAlchemy
+    Python and SQLAlchemy
 
 # SETUP AND INSTALLATION
 
