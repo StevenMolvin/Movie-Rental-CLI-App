@@ -97,5 +97,16 @@ def return_movie(session):
         print("==== Movies ====")
         for movie in movies:
             print(f"ID: {movie.id}, Title: {movie.title}, Director: {movie.director}")
+            
+# List All Customers
+    def list_customers(session):
+        customers = session.query(Customer).all()
+        
+        print("==== Customer List ====")
+        for customer in customers:
+            print(f"ID: {customer.id}, Name: {customer.name}")
+            
+# Main program loop
+            
 
 
