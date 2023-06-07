@@ -39,6 +39,9 @@ class Rental(Base):
     movie = relationship('Movie', back_populates='rentals')
     customer = relationship('Customer', back_populates='rentals')
     
+# Create the tables in the database
+Base.metadata.create_all(engine)
+    
     
     
     
