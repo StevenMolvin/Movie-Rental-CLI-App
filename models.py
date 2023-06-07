@@ -19,12 +19,14 @@ class Movie(Base):
     title = Column(String)
     length = Column(String)
     release_date = Column(DateTime)
+    rentals = relationship('Rental', back_populates='movie')
     
 # Define the Customer class
 class Customer(Base):
     __tablename__ = 'customers'
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    rentals = relationship('Rental', back_populates='customer')
     
 # Define the Rental class
 class Rental(Base):
@@ -34,6 +36,8 @@ class Rental(Base):
     movie_id = Column(Integer, ForeignKey('movies.id'))
     rental_date = Column(DateTime, default=datetime.now)
     return_date = Column(DateTime)
+    movie = relationship('Movie', back_populates='rentals')
+    customer = relationship('Customer', back_populates='rentals')
     
     
     
