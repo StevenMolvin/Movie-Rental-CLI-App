@@ -26,4 +26,15 @@ class Customer(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     
+# Define the Rental class
+class Rental(Base):
+    __tablename__ = 'rentals'
+    id = Column(Integer, primary_key=True)
+    customer_id = Column(Integer, ForeignKey('customers.id'))
+    movie_id = Column(Integer, ForeignKey('movies.id'))
+    rental_date = Column(DateTime, default=datetime.now)
+    return_date = Column(DateTime)
+    
+    
+    
     
