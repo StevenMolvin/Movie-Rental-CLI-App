@@ -1,12 +1,13 @@
 # Movie-Rental-Database
     A simple Command Line Interface which allows a user to view a list of films and rent depending 
-on availabilty. This is achieved by implementing python fundamentals and SQLAlchemy to create 
-and interact with the database.
+    on availabilty. This is achieved by implementing python fundamentals and SQLAlchemy to create 
+    and interact with the database.
 
 TECHNOLOGY:
     Python > SQLAlchemy
 
 SETUP AND INSTALLATION
+
     -Clone the repository from Github:
         1. Run ($ git clone git@github.com:StevenMolvin/Movie-Rental-Database.git) in your desired
            directory on your terminal.
