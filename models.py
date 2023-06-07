@@ -11,3 +11,12 @@ if __name__ == '__main__':
     Base = declarative_base()
     Session = sessionmaker(bind=engine)
     session = Session()
+    
+# Define the Movie class
+class Movie(Base):
+    __tablename__ = 'movies'
+    id = Column(Integer, primary_key=True)
+    title = Column(String)
+    length = Column(String)
+    release_date = Column(DateTime)
+    
