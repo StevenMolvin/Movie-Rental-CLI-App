@@ -91,5 +91,11 @@ def return_movie(session):
     print("Movie returned successfully!")
     
 # List All Movies
-    
+    def list_movies(session):
+        movies = session.query(Movie).all()
+        
+        print("==== Movies ====")
+        for movie in movies:
+            print(f"ID: {movie.id}, Title: {movie.title}, Director: {movie.director}")
+
 
