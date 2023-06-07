@@ -22,8 +22,17 @@ TECHNOLOGY:
         b)Linux/ Ubuntu
             1. $ sudo apt-get update && sudo apt-get upgrade
             2. $ sudo apt-get install python3.11
-    
 
+    -Install SQLAlchemy(Skip this step if you already have it):
+        Open your terminal and run:
+            1. $ pip install SQLAlchemy or
+            2. $ pip3 install SQLAlchemy or
+            3. $ python3 -m pip install sqlalchemy
+    
+    -Install dependencies:
+        Open your terminal, navigate to your remote repository directory and run:
+            $ pipenv install
+            
 # CONTRIBUTION GUIDELINES
     -Fork the project
     -Create a new branch ($ git checkout -b <branch_name>)
