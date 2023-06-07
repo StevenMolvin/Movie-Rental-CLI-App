@@ -91,22 +91,41 @@ def return_movie(session):
     print("Movie returned successfully!")
     
 # List All Movies
-    def list_movies(session):
-        movies = session.query(Movie).all()
+def list_movies(session):
+    movies = session.query(Movie).all()
         
-        print("==== Movies ====")
-        for movie in movies:
-            print(f"ID: {movie.id}, Title: {movie.title}, Director: {movie.director}")
+    print("==== Movies ====")
+    for movie in movies:
+        print(f"ID: {movie.id}, Title: {movie.title}, Director: {movie.director}")
             
 # List All Customers
-    def list_customers(session):
-        customers = session.query(Customer).all()
+def list_customers(session):
+    customers = session.query(Customer).all()
         
-        print("==== Customer List ====")
-        for customer in customers:
-            print(f"ID: {customer.id}, Name: {customer.name}")
+    print("==== Customer List ====")
+    for customer in customers:
+        print(f"ID: {customer.id}, Name: {customer.name}")
             
 # Main program loop
+while True:
+    display_menu()
+    choice = input("Enter you choice (1-5): ")
+    
+    if choice == '1':
+        rent_movie()
+    elif choice == '2':
+        return_movie()
+    elif choice == '3':
+        list_movies()
+    elif choice == '4':
+        list_customers()
+    elif choice == '5':
+        break
+    else:
+        print("Invalid choice. Please try again.")
+
+# Close the database session
+session.close()
             
 
 
