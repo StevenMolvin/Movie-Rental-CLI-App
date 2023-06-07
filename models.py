@@ -41,6 +41,14 @@ class Rental(Base):
     
 # Create the tables in the database
 Base.metadata.create_all(engine)
+# Welcome menu
+def display_menu():
+    print("==== Welcome Mo's Movie Rental Database! ====")
+    print("1. Rent a Movie")
+    print("2. Return a Movie")
+    print("3. List All Movies")
+    print("4. List All Customers")
+    print("5. Exit")
     
     
     
