@@ -38,6 +38,10 @@ and interact with the database.
     -Rent any movie ever released!, Return it!, Check out a list of movies rented out!, Check out a 
     list of customers! View a list of movies rented out, by who, when, and when they are due!
 
+# AUTHOR
+
+Stephen Mogusu
+
 # CONTRIBUTION GUIDELINES
     -Fork the project
     -Create a new branch ($ git checkout -b <branch_name>)
