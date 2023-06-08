@@ -35,6 +35,8 @@ class Rental(Base):
     id = Column(Integer, primary_key=True)
     movie_id = Column(Integer, ForeignKey('movies.id'))
     customer_id = Column(Integer, ForeignKey('customers.id'))
+    rented_movie = Column(String)
+    customer_name = Column(String)
     rental_date = Column(DateTime, default=datetime.now)
     return_date = Column(DateTime)
     
@@ -51,41 +53,36 @@ def display_menu():
     print("2. Return a Movie")
     print("3. List All Rented Movies")
     print("4. List All Customers")
-    print("5. Exit")
+    print("5. List Movies Due")
+    print("6. Exit")
     
 # Rent Movie
 def rent_movie(session):
     title = input("Enter the movie title: ")
     price = input("Costs Ksh.  ")
     
+    customer_name= input("Enter your name: ")
+    customer = session.query(Customer).filter_by(name=customer_name).first()
+    
+    return_date_str = input("Enter the return date (DD-MM-YYYY HH:MM): ")
+    
+    try:
+        return_date = datetime.strptime(return_date_str, "%d-%m-%Y %H:%M")
+    except ValueError:
+        print("Invalid date format. Please enter the dates in the format 'DD-MM-YYYY HH:MM'.")
+        return
     
     movie = Movie(title= title, price_KES= price)
     session.add(movie)
     session.commit()
-    
-    customer_name= input("Enter your name: ")
-    customer = session.query(Customer).filter_by(name=customer_name).first()
     
     if customer is None:
         customer = Customer(name=customer_name)
         session.add(customer)
         session.commit()
     
-    rental_date_str = input("Enter the rental date (DD-MM-YYYY HH:MM): ")
-    return_date_str = input("Enter the return date (DD-MM-YYYY HH:MM): ")
     
-    try:
-        rental_date = datetime.strptime(rental_date_str, "%d-%m-%Y %H:%M")
-        return_date = datetime.strptime(return_date_str, "%d-%m-%Y %H:%M")
-    except ValueError:
-        print("Invalid date format. Please enter the dates in the format 'DD-MM-YYYY HH:MM'.")
-        return
-    
-    if return_date <= rental_date:
-        print("Return date must be after the rental date.")
-        return
-    
-    rental = Rental(movie= movie, customer= customer, rental_date= rental_date, return_date= return_date)
+    rental = Rental(movie= movie, customer= customer, return_date= return_date, customer_name= customer_name, rented_movie= title)
     session.add(rental)
     session.commit()
     
@@ -100,6 +97,7 @@ def rent_movie(session):
     print("")
     print("Movie rented successfully!")
     print("")
+    print("KEEP YOUR RENTAL ID SAFE! YOU WILL NEED IT WHEN RETURNING THE MOVIE!")
     print("")
     
 # Return Movie
@@ -151,12 +149,20 @@ def list_customers(session):
     for customer in customers:
         print(f"ID: {customer.id}, Name: {customer.name}")
         print("")
-        
+
+# List All Rentals Due
+def list_rentals_due(session):
+    rentals = session.query(Rental).all()
+    
+    print("")
+    print("=================================================== MOVIES DUE ===================================================")
+    for rental in rentals:
+        print(f"Rental ID: {rental.id}, Movie: {rental.rented_movie}, Customer: {rental.customer_name}  Date Rented: {rental.rental_date}, Date Due: {rental.return_date}")
             
 # Main program loop
 while True:
     display_menu()
-    choice = input("Enter you choice (1-5): ")
+    choice = input("Enter you choice (1-6): ")
     
     if choice == '1':
         rent_movie(session)
@@ -167,6 +173,8 @@ while True:
     elif choice == '4':
         list_customers(session)
     elif choice == '5':
+        list_rentals_due(session)
+    elif choice == '6':
         break
     else:
         print("Invalid choice. Please try again.")

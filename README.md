@@ -1,7 +1,7 @@
 # Movie-Rental-Database
-    A simple Command Line Interface which allows a user to view a list of films and rent depending 
-    on availabilty. This is achieved by implementing python fundamentals and SQLAlchemy to create 
-    and interact with the database.
+    A simple Command Line Interface which allows a user to rent films, return them and a few other
+functionalities.This is achieved by implementing python fundamentals and SQLAlchemy to create 
+and interact with the database.
 
 # TECHNOLOGY:
     Python and SQLAlchemy
@@ -34,6 +34,9 @@
             $ pipenv install
 
     -Run "python3 movies.db" or "python movies.db" depending on your python version.
+
+    -Rent any movie ever released!, Return it!, Check out a list of movies rented out!, Check out a 
+    list of customers!View a list of movies rented out, by who, when, and when they are due!
 
 # CONTRIBUTION GUIDELINES
     -Fork the project

@@ -15,6 +15,8 @@ def upgrade():
         sa.Column('id', sa.Integer(), nullable=False),
         sa.Column('movie_id', sa.Integer(), nullable=False),
         sa.Column('customer_id', sa.Integer(), nullable=False),
+        sa.Column('rented_movie', sa.String(), nullable=False),
+        sa.Column('customer_name', sa.String(), nullable=False),
         sa.Column('rental_date', sa.DateTime(), nullable=True),
         sa.Column('return_date', sa.DateTime(), nullable=True),
         sa.ForeignKeyConstraint(['movie_id'], ['movies.id'], ),
