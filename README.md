@@ -33,6 +33,8 @@
         Open your terminal, navigate to your remote repository directory and run:
             $ pipenv install
 
+    
+
 # CONTRIBUTION GUIDELINES
     -Fork the project
     -Create a new branch ($ git checkout -b <branch_name>)

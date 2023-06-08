@@ -17,7 +17,7 @@ class Movie(Base):
     __tablename__ = 'movies'
     id = Column(Integer, primary_key=True)
     title = Column(String)
-    price = Column(Integer)
+    price_KES = Column(Integer)
     
     rentals = relationship('Rental', back_populates='movie')
 
@@ -59,7 +59,7 @@ def rent_movie(session):
     price = input("Costs Ksh.  ")
     
     
-    movie = Movie(title= title, price= price)
+    movie = Movie(title= title, price_KES= price)
     session.add(movie)
     session.commit()
     
@@ -138,7 +138,7 @@ def list_rented_movies(session):
     print("")    
     print("============== RENTED MOVIES ==============")
     for movie in movies:
-        print(f"ID: {movie.id}, Title: {movie.title}, Price: {movie.price}")
+        print(f"ID: {movie.id}, Title: {movie.title}, Price: {movie.price_KES}")
         print("")
         
             
@@ -154,22 +154,22 @@ def list_customers(session):
         
             
 # Main program loop
-while True:
-    display_menu()
-    choice = input("Enter you choice (1-5): ")
+# while True:
+#     display_menu()
+#     choice = input("Enter you choice (1-5): ")
     
-    if choice == '1':
-        rent_movie(session)
-    elif choice == '2':
-        return_movie(session)
-    elif choice == '3':
-        list_rented_movies(session)
-    elif choice == '4':
-        list_customers(session)
-    elif choice == '5':
-        break
-    else:
-        print("Invalid choice. Please try again.")
+#     if choice == '1':
+#         rent_movie(session)
+#     elif choice == '2':
+#         return_movie(session)
+#     elif choice == '3':
+#         list_rented_movies(session)
+#     elif choice == '4':
+#         list_customers(session)
+#     elif choice == '5':
+#         break
+#     else:
+#         print("Invalid choice. Please try again.")
 
 # Close the database session
 session.close()
