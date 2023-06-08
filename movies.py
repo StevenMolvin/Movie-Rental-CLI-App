@@ -2,7 +2,8 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime, Foreign
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 from datetime import datetime
-from DSA import program
+import click
+import fire
 
 
 # Create the database engine
@@ -152,7 +153,23 @@ def list_customers(session):
         print("")
         
             
-program()
+# Main program loop
+while True:
+    display_menu()
+    choice = input("Enter you choice (1-5): ")
+    
+    if choice == '1':
+        rent_movie(session)
+    elif choice == '2':
+        return_movie(session)
+    elif choice == '3':
+        list_rented_movies(session)
+    elif choice == '4':
+        list_customers(session)
+    elif choice == '5':
+        break
+    else:
+        print("Invalid choice. Please try again.")
 
 # Close the database session
 session.close()
