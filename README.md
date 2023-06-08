@@ -36,7 +36,7 @@ and interact with the database.
     -Run "python3 movies.db" or "python movies.db" depending on your python version.
 
     -Rent any movie ever released!, Return it!, Check out a list of movies rented out!, Check out a 
-    list of customers!View a list of movies rented out, by who, when, and when they are due!
+    list of customers! View a list of movies rented out, by who, when, and when they are due!
 
 # CONTRIBUTION GUIDELINES
     -Fork the project
