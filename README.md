@@ -33,7 +33,7 @@
         Open your terminal, navigate to your remote repository directory and run:
             $ pipenv install
 
-    
+    -Run "python3 movies.db" or "python movies.db" depending on your python version.
 
 # CONTRIBUTION GUIDELINES
     -Fork the project
