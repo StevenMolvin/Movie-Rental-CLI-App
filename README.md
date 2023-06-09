@@ -1,5 +1,5 @@
 # Movie-Rental-Database
-    A simple Command Line Interface which allows a user to rent films, return them and a few other
+    A simple Command Line Interface program which allows a user to rent films, return them and a few other
     functionalities.This is achieved by implementing python fundamentals and SQLAlchemy to create 
     and interact with the database.
 
