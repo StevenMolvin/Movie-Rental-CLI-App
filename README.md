@@ -32,8 +32,18 @@ and interact with the database.
     -Install dependencies:
         Open your terminal, navigate to your remote repository directory and run:
             $ pipenv install
+            $ pip install click
+            $ pip install rich
+            $ pip install tqdm
 
-    -Run "python3 movies.db" or "python movies.db" depending on your python version.
+    -Run "python3 cli.py" or "python cli.py" depending on your python version, followed by :
+            1. rent-movie: to rent a movie
+            2. return-movie: to return a rented movie
+            3. list-rented-movies: to view the rented movies table
+            4. list-customers: to view the customers table
+            5. list-rentals-due: to view the rentals table
+        
+        for example: $ python3 cli.py list-rentals-due or $ python cli.py list-rentals-due 
 
     -Rent any movie ever released!, Return it!, Check out a list of movies rented out!, Check out a 
     list of customers! View a list of movies rented out, by who, when, and when they are due!

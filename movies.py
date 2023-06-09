@@ -2,9 +2,6 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime, Foreign
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 from datetime import datetime
-import click
-import fire
-
 
 # Create the database engine
 engine = create_engine('sqlite:///movie_rental.db')
